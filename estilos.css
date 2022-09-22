@@ -1,0 +1,235 @@
+*{ /*selector universal*/
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: lightgrey;
+    font-family: sans-serif;
+}
+#contenedor{
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1000px;
+    display: grid;
+    gap: 0.4em;/*Separacion de la cuadricula*/
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,auto);
+    
+/*Armar plantilla*/
+grid-template-areas: 
+"encabezado encabezado encabezado"
+"men men men"
+"lateral contenido contenido"
+"w1 w2 w3"
+"footer footer footer";
+}
+.encabezado,.navegacion,.contenido,.lateral,.widget-1,.widget-2,.widget-3,footer{
+    border-radius: 5px;
+   
+}
+
+.encabezado{
+    position: relative;
+    display: flex;
+    grid-area: encabezado;
+    text-align: center;
+    height: 60px;
+    background: #a1c3e7;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    
+}
+.encabezado .img1{
+    width: 100px;
+    position: absolute;
+    left: 5px;
+}
+
+.encabezado .face{
+    width: 20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+}
+
+.navegacion{
+    grid-area: men;
+    
+    text-align: center;
+    color: white;
+    background: #252121d5;
+    
+
+}
+.contenido{
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: contenido;
+    text-align: justify;
+    padding: 10px;
+    background-size:cover;
+   
+}
+.lateral{
+    grid-area: lateral;
+   background: #b6d0ec;
+   opacity: 0.3;
+   background-image: url(images/logo2.png);
+    background-attachment:local;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+.widget-1{
+    grid-area: w1;
+    text-align: center;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+     background-image: url(http://placeimg.com/640/480/tech);
+     background-size: cover;
+     transition: 1s ease-in-out all;
+     color: transparent;
+    
+    
+}
+.widget-1:hover{
+    background: #6189e0;
+    color: white;
+    cursor: pointer;
+    
+}
+.widget-2{
+    grid-area: w2;
+    
+    text-align: center;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(http://placeimg.com/640/480/any);
+     background-size: cover;
+     transition: 1s ease-in-out all;
+     color: transparent;
+
+}
+.col a {
+    color: #dc7b79;
+}
+
+.widget-2:hover{
+    background: #6189e0;
+    color: white;
+    cursor: pointer;
+    
+}
+.widget-3{
+    grid-area: w3;
+   
+    text-align: center;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(http://placeimg.com/640/480/arch/sepia);
+    background-size: cover;
+    transition: 1s ease-in-out all;
+     color: transparent;
+}
+
+.widget-3:hover{
+    background: #6189e0;
+    color: white;
+    cursor: pointer;
+    
+}
+footer{
+    display: flex;
+    grid-area: footer;
+    text-align: center;
+    height: 60px;
+    background: #a1c3e7;
+    /*background: #12203e;*/
+    color: #dc7b79;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contenido h1{
+    margin: 6px;
+    text-align: center;
+}
+
+
+.contenido h2{
+    color: #dc7b79;
+    text-align: center;
+}
+.contenido h3{
+    color: #dc7b79;
+    text-align: center;
+}
+.art{
+    margin-bottom: 20px;
+    box-shadow: 1px 3px 3px  #a1c3e7;;
+    padding: 6px;
+}
+.lista{
+    list-style: none;
+    padding: 5px;
+    width: 100%;
+    
+}
+.lista li{
+    display: flex;
+    margin: 15px;
+    background: #12203ed8;
+    height: 40px;
+    align-items:center;
+    justify-content:center;
+    border-radius: 4px;
+   
+}
+.lista li a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+.lista li:hover{
+    background: #030235;
+    cursor: pointer;
+
+}
+@media screen and (max-width:768px) {
+    #contenedor{
+grid-template-areas: 
+"encabezado encabezado encabezado"
+"men men men"
+"contenido contenido contenido"
+"w1 w1 w1"
+"w2 w2 w2"
+"w3 w3 w3"
+"footer footer footer";
+    }
+.lateral{
+    display: none;
+}
+}
+
+@media screen and (max-width:320px) {
+    #contenedor{
+        grid-template-areas: 
+        "encabezado encabezado encabezado"
+        "men men men"
+        "contenido contenido contenido"
+        "footer footer footer";
+            }
+        .lateral, .widget-1, .widget-2,.widget-3{
+            display: none;
+}
+}
+ 
